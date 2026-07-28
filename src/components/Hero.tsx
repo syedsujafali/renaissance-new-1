@@ -74,7 +74,7 @@ export function Hero({ ready }: HeroProps) {
     };
   }, []);
 
-  const handleMobileLinkClick = (e: React.MouseEvent, id: string) => {
+  const handleMobileLinkClick = () => {
     // We let the native click propagate so useLenis can handle the smooth scroll
     unlockedRef.current = true;
     removeScrollLock();
@@ -104,6 +104,7 @@ export function Hero({ ready }: HeroProps) {
           muted
           loop
           playsInline
+          preload="auto"
           className="hidden md:block h-full w-full object-cover"
           initial={{ clipPath: "circle(0% at 50% 50%)", scale: 1.1, opacity: 0 }}
           animate={ready ? { clipPath: "circle(150% at 50% 50%)", scale: 1, opacity: 1 } : {}}
@@ -117,7 +118,7 @@ export function Hero({ ready }: HeroProps) {
               <a
                 key={link.id}
                 href={`#${link.id}`}
-                onClick={(e) => handleMobileLinkClick(e, link.id)}
+                onClick={handleMobileLinkClick}
                 className="font-display text-5xl sm:text-7xl font-medium tracking-tight text-white/60 transition-colors hover:text-white"
               >
                 {link.label}
