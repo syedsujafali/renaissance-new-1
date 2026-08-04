@@ -140,21 +140,7 @@ export const PROJECTS: Project[] = [
     layout: "wide",
   },
 
-  {
-    id: "verizon-strategy",
-    title: "Verizon Strategy Meeting",
-    category: "Corporate Conferences",
-    year: "2008",
-    location: "National",
-    attendees: "Corporate Leadership",
-    description:
-      "A high-level internal corporate meeting focused on market growth strategy. Renaissance executed complete environmental design, including formal banquet styling and branded A/V production.",
-    image: "/d2.jpg",
-    imageSecondary: "/d1.jpg",
-    images: ["/d2.jpg", "/d1.jpg", "/c2.jpg"],
-    tags: ["Corporate Strategy", "A/V Production", "Environmental Design"],
-    layout: "full",
-  },
+
 ];
 
 export const CLIENTS = [

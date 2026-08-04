@@ -34,7 +34,7 @@ export function Contact() {
       <div className="relative z-10 mx-auto grid max-w-[1600px] gap-16 px-6 py-24 md:px-10 md:py-32 lg:grid-cols-12 lg:gap-10 lg:px-14 lg:py-40">
         <div className="lg:col-span-5">
           <Reveal>
-            <p className="mb-6 font-sans text-[0.7rem] uppercase tracking-[0.35em] text-white/50">
+            <p className="mb-6 font-sans text-[0.75rem] uppercase tracking-[0.35em] text-white/80 font-semibold">
               Get in Touch
             </p>
           </Reveal>
@@ -44,7 +44,7 @@ export function Contact() {
             className="font-display text-[clamp(2.4rem,5vw,4.2rem)] font-medium leading-[1.05] tracking-tight text-white"
           />
           <Reveal delay={0.2}>
-            <p className="mt-8 max-w-md font-sans text-base font-light leading-relaxed text-white/70 md:text-lg">
+            <p className="mt-8 max-w-md font-sans text-base font-light leading-relaxed text-white/90 md:text-lg">
               Share a glimpse of your vision. Our team will respond with care,
               clarity, and the craftsmanship your occasion deserves.
             </p>
@@ -52,20 +52,20 @@ export function Contact() {
 
           <div className="mt-14 space-y-8">
             <Reveal delay={0.25}>
-              <p className="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-white/40">
+              <p className="font-sans text-[0.7rem] uppercase tracking-[0.3em] text-white/70 font-semibold">
                 Inquire
               </p>
               <div className="space-y-4 mt-2">
                 <a
                   href="mailto:info@renaissanceevents.com"
-                  className="block font-display text-xl sm:text-2xl md:text-[1.35rem] lg:text-3xl text-white transition-opacity hover:opacity-70"
+                  className="block font-display text-xl sm:text-2xl md:text-[1.35rem] lg:text-3xl text-white transition-opacity hover:opacity-75"
                   data-cursor="hover"
                 >
                   info@renaissanceevents.com
                 </a>
                 <a
                   href="mailto:info@specialeventschannel.com"
-                  className="block font-display text-xl sm:text-2xl md:text-[1.35rem] lg:text-3xl text-white transition-opacity hover:opacity-70"
+                  className="block font-display text-xl sm:text-2xl md:text-[1.35rem] lg:text-3xl text-white transition-opacity hover:opacity-75"
                   data-cursor="hover"
                 >
                   info@specialeventschannel.com
@@ -77,7 +77,7 @@ export function Contact() {
 
         <div className="lg:col-span-6 lg:col-start-7">
           <Reveal delay={0.15}>
-            <div className="relative z-10 w-full bg-white/[0.02] border border-white/5 rounded-3xl p-8 sm:p-10 md:p-14 shadow-2xl backdrop-blur-sm">
+            <div className="relative z-10 w-full bg-white/[0.06] border border-white/15 rounded-3xl p-8 sm:p-10 md:p-14 shadow-2xl backdrop-blur-sm">
               <AnimatePresence mode="wait">
                 {!submitted ? (
                   <motion.form
@@ -92,7 +92,7 @@ export function Contact() {
                     
                     <div className="grid gap-10 md:grid-cols-2">
                       <label className="flex flex-col gap-4 group/input">
-                        <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-white/50 group-focus-within/input:text-white transition-colors font-semibold">
+                        <span className="font-sans text-[0.7rem] uppercase tracking-[0.2em] text-white/90 group-focus-within/input:text-white transition-colors font-bold">
                           Name
                         </span>
                         <input
@@ -101,12 +101,12 @@ export function Contact() {
                           type="text"
                           autoComplete="name"
                           placeholder="Your full name"
-                          className="w-full bg-transparent border-b border-white/20 px-0 py-2 font-sans text-base md:text-lg text-white placeholder-white/30 focus:border-white focus:outline-none transition-colors"
+                          className="w-full bg-transparent border-b border-white/40 px-0 py-2 font-sans text-base md:text-lg text-white placeholder-white/60 focus:border-white focus:outline-none transition-colors"
                         />
                       </label>
 
                       <label className="flex flex-col gap-4 group/input">
-                        <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-white/50 group-focus-within/input:text-white transition-colors font-semibold">
+                        <span className="font-sans text-[0.7rem] uppercase tracking-[0.2em] text-white/90 group-focus-within/input:text-white transition-colors font-bold">
                           Email
                         </span>
                         <input
@@ -115,13 +115,13 @@ export function Contact() {
                           type="email"
                           autoComplete="email"
                           placeholder="you@company.com"
-                          className="w-full bg-transparent border-b border-white/20 px-0 py-2 font-sans text-base md:text-lg text-white placeholder-white/30 focus:border-white focus:outline-none transition-colors"
+                          className="w-full bg-transparent border-b border-white/40 px-0 py-2 font-sans text-base md:text-lg text-white placeholder-white/60 focus:border-white focus:outline-none transition-colors"
                         />
                       </label>
                     </div>
 
                     <label className="flex flex-col gap-4 group/input">
-                      <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-white/50 group-focus-within/input:text-white transition-colors font-semibold">
+                      <span className="font-sans text-[0.7rem] uppercase tracking-[0.2em] text-white/90 group-focus-within/input:text-white transition-colors font-bold">
                         Company / Organization
                       </span>
                       <input
@@ -129,37 +129,37 @@ export function Contact() {
                         type="text"
                         autoComplete="organization"
                         placeholder="Optional"
-                        className="w-full bg-transparent border-b border-white/20 px-0 py-2 font-sans text-base md:text-lg text-white placeholder-white/30 focus:border-white focus:outline-none transition-colors"
+                        className="w-full bg-transparent border-b border-white/40 px-0 py-2 font-sans text-base md:text-lg text-white placeholder-white/60 focus:border-white focus:outline-none transition-colors"
                       />
                     </label>
 
                     <label className="flex flex-col gap-4 group/input">
-                      <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-white/50 group-focus-within/input:text-white transition-colors font-semibold">
+                      <span className="font-sans text-[0.7rem] uppercase tracking-[0.2em] text-white/90 group-focus-within/input:text-white transition-colors font-bold">
                         How can we help?
                       </span>
                       <textarea
                         required
                         name="message"
                         placeholder="Tell us about your event, timeline, and aspirations..."
-                        className="w-full bg-transparent border-b border-white/20 px-0 py-2 font-sans text-base md:text-lg text-white placeholder-white/30 focus:border-white focus:outline-none transition-colors min-h-[120px] resize-none"
+                        className="w-full bg-transparent border-b border-white/40 px-0 py-2 font-sans text-base md:text-lg text-white placeholder-white/60 focus:border-white focus:outline-none transition-colors min-h-[120px] resize-none"
                       />
                     </label>
 
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 pt-6">
-                      <p className="max-w-[280px] font-sans text-[0.65rem] font-light leading-relaxed text-white/50">
+                      <p className="max-w-[280px] font-sans text-[0.7rem] font-normal leading-relaxed text-white/80">
                         By submitting, you agree to be contacted regarding your inquiry. We respect your privacy.
                       </p>
                       
                       <button 
                         type="submit" 
                         disabled={sending} 
-                        className="flex items-center justify-center gap-4 px-8 py-4 rounded-full border border-white/20 text-white hover:bg-white hover:text-renaissance transition-all duration-300 shrink-0 group"
+                        className="flex items-center justify-center gap-4 px-8 py-4 rounded-full border-2 border-white text-white hover:bg-white hover:text-renaissance transition-all duration-300 shrink-0 group font-bold"
                       >
-                        <span className="font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase">
+                        <span className="font-sans text-[0.75rem] font-bold tracking-[0.2em] uppercase">
                           {sending ? "Sending..." : "Send Message"}
                         </span>
                         <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                       </button>
                     </div>

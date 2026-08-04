@@ -45,7 +45,13 @@ export function useLenis(enabled: boolean) {
       lenis.stop();
     }
 
+    const onScrollTop = () => {
+      lenis.scrollTo(0, { immediate: true });
+    };
+    window.addEventListener("scroll-to-top", onScrollTop);
+
     return () => {
+      window.removeEventListener("scroll-to-top", onScrollTop);
       observer.disconnect();
       cancelAnimationFrame(frame);
       document.removeEventListener("click", onClick);
