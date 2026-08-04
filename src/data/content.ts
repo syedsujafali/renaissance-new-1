@@ -68,77 +68,91 @@ export type Project = {
   title: string;
   category: string;
   year: string;
+  location: string;
+  attendees: string;
   description: string;
   image: string;
   imageSecondary?: string;
+  images: string[];
+  tags: string[];
   layout: "full" | "split" | "stacked" | "wide";
 };
 
 export const PROJECTS: Project[] = [
   {
-    id: "gala-lumiere",
-    title: "Gala Lumière",
-    category: "Fundraising Gala",
+    id: "verus-summit",
+    title: "Verus Litigation Summit",
+    category: "Corporate Conferences",
     year: "2024",
+    location: "New York, NY",
+    attendees: "400+ Legal Professionals",
     description:
-      "An intimate black-tie evening for a global nonprofit — candlelit tables, orchestral arrivals, and a narrative arc that raised record commitments.",
-    image: "/a1.jpeg",
-    imageSecondary: "/a3.JPEG",
+      "A comprehensive mass tort litigation support summit for Verus — featuring expert panels, strategic networking, and end-to-end case management workshops for law firms.",
+    image: "/b1.jpeg",
+    imageSecondary: "/b2.jpeg",
+    images: ["/b1.jpeg", "/b2.jpeg", "/b3.jpeg", "/b4.jpeg"],
+    tags: ["Legal Conference", "Mass Tort Support", "Executive Summit"],
     layout: "full",
   },
   {
-    id: "summit-north",
-    title: "Summit North",
-    category: "Executive Conference",
-    year: "2024",
+    id: "nba-100-centennial",
+    title: "NBA 100th Centennial Convention",
+    category: "Legal Conferences & Galas",
+    year: "2025",
+    location: "Chicago, IL",
+    attendees: "Legal Professionals & Dignitaries",
     description:
-      "A two-day leadership summit for Fortune 500 executives — precision staging, immersive content moments, and hospitality choreographed to the minute.",
-    image: "/b1.jpeg",
-    imageSecondary: "/b2.jpeg",
+      "The historic 100-year Centennial Convention for the National Bar Association — an expansive multi-day gathering in Chicago featuring high-profile keynotes, networking events, and the 'Igniting Justice' celebration.",
+    image: "/n3.jpeg",
+    imageSecondary: "/f3.jpeg",
+    images: ["/n3.jpeg", "/f3.jpeg", "/n4.jpg", "/f2.jpeg"],
+    tags: ["Centennial Celebration", "Legal Convention", "National Event"],
     layout: "split",
   },
   {
-    id: "bloom-reception",
-    title: "Bloom Reception",
-    category: "Brand Experience",
+    id: "clemente-gala",
+    title: "Roberto Clemente Foundation Gala",
+    category: "Fundraising & Galas",
     year: "2023",
+    location: "Pittsburgh, PA",
+    attendees: "200+ VIPs & Athletes",
     description:
-      "A floral-forward reception celebrating a landmark anniversary — layered environments, custom scent design, and editorial table landscapes.",
-    image: "/e2.jpeg",
-    imageSecondary: "/f2.jpeg",
+      "Commemorating the 50th anniversary of Roberto Clemente's Hall of Fame induction, this milestone fundraising gala at the Heinz History Center featured MLB alumni and honored community leaders.",
+    image: "/a3.JPEG",
+    imageSecondary: "/a4.png",
+    images: ["/a3.JPEG", "/a4.png", "/a1.jpeg", "/a2.JPEG"],
+    tags: ["Charity Gala", "Event Production", "Sports & Philanthropy"],
     layout: "stacked",
   },
   {
-    id: "midnight-assembly",
-    title: "Midnight Assembly",
-    category: "Special Event",
-    year: "2023",
+    id: "nba-midyear-conference",
+    title: "NBA 45th Annual Midyear Conference",
+    category: "Conferences & Galas",
+    year: "2025",
+    location: "Des Moines, IA",
+    attendees: "Legal Scholars & Advocates",
     description:
-      "An after-dark gathering for a sports organization — architectural lighting, sculptural seating, and a sequence of reveal moments.",
-    image: "/f5.jpeg",
-    imageSecondary: "/n3.jpeg",
+      "Featuring the signature Heman Marion Sweatt Awards Luncheon honoring civil rights trailblazers. Renaissance provided full infrastructure management, including VIP seating, stage production, and banquet coordination.",
+    image: "/e2.jpeg",
+    imageSecondary: "/e1.jpeg",
+    images: ["/e2.jpeg", "/e1.jpeg", "/e3.jpeg", "/f5.jpeg"],
+    tags: ["Midyear Conference", "Awards Luncheon", "VIP Logistics"],
     layout: "wide",
   },
+
   {
-    id: "forum-stage",
-    title: "The Forum Stage",
-    category: "Product Launch",
-    year: "2023",
+    id: "verizon-strategy",
+    title: "Verizon Strategy Meeting",
+    category: "Corporate Conferences",
+    year: "2008",
+    location: "National",
+    attendees: "Corporate Leadership",
     description:
-      "A cinematic product reveal for a global brand — stage architecture, motion content, and a guest journey designed as a single continuous story.",
-    image: "/e1.jpeg",
-    imageSecondary: "/e2.jpeg",
-    layout: "split",
-  },
-  {
-    id: "heritage-ballroom",
-    title: "Heritage Ballroom",
-    category: "Association Dinner",
-    year: "2022",
-    description:
-      "A classic ballroom transformed for an association milestone — refined table craft, ceremonial pacing, and unforgettable guest hospitality.",
-    image: "/f2.jpeg",
-    imageSecondary: "/n1.JPEG",
+      "A high-level internal corporate meeting focused on market growth strategy. Renaissance executed complete environmental design, including formal banquet styling and branded A/V production.",
+    image: "/d2.jpg",
+    imageSecondary: "/d1.jpg",
+    images: ["/d2.jpg", "/d1.jpg", "/c2.jpg"],
+    tags: ["Corporate Strategy", "A/V Production", "Environmental Design"],
     layout: "full",
   },
 ];

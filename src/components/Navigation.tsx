@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { NAV_LINKS } from "../data/content";
 import { useScrollY } from "../hooks/useScrollProgress";
 import { cn } from "../utils/cn";
@@ -15,6 +16,9 @@ export function Navigation({ ready }: NavigationProps) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
   const [heroRemoved, setHeroRemoved] = useState(false);
+  
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onHeroRemoved = () => setHeroRemoved(true);
@@ -27,12 +31,26 @@ export function Navigation({ ready }: NavigationProps) {
     };
   }, []);
 
-  const effectivelyScrolled = scrolled || heroRemoved;
+  const effectivelyScrolled = scrolled || heroRemoved || location.pathname !== "/";
 
   useEffect(() => {
     const handleScroll = () => {
-      let currentActive = active;
+      if (location.pathname === "/portfolio") {
+        if (active !== "portfolio") setActive("portfolio");
+        return;
+      }
+      if (location.pathname === "/about") {
+        if (active !== "about") setActive("about");
+        return;
+      }
+      if (location.pathname === "/contact") {
+        if (active !== "contact") setActive("contact");
+        return;
+      }
+
+      let currentActive = "home";
       for (const link of NAV_LINKS) {
+        if (link.id === "portfolio" || link.id === "about" || link.id === "contact") continue;
         const el = document.getElementById(link.id);
         if (el) {
           const { top, bottom } = el.getBoundingClientRect();
@@ -53,7 +71,22 @@ export function Navigation({ ready }: NavigationProps) {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [active, ready]);
+  }, [active, ready, location.pathname]);
+
+  // Handle hash navigation when loading a new page
+  useEffect(() => {
+    if (location.pathname === "/" && location.hash) {
+      setTimeout(() => {
+        const id = location.hash.replace("#", "");
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView();
+        }
+      }, 100);
+    } else if (location.pathname === "/" && !location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -65,6 +98,35 @@ export function Navigation({ ready }: NavigationProps) {
   const scrollTo = (id: string) => {
     setOpen(false);
     
+    if (id === "portfolio") {
+      if (location.pathname !== "/portfolio") {
+         navigate("/portfolio");
+      }
+      setTimeout(() => window.scrollTo(0, 0), 10);
+      return;
+    }
+
+    if (id === "about") {
+      if (location.pathname !== "/about") {
+         navigate("/about");
+      }
+      setTimeout(() => window.scrollTo(0, 0), 10);
+      return;
+    }
+
+    if (id === "contact") {
+      if (location.pathname !== "/contact") {
+         navigate("/contact");
+      }
+      setTimeout(() => window.scrollTo(0, 0), 10);
+      return;
+    }
+
+    if (location.pathname !== "/") {
+      navigate(id === "home" ? "/" : `/#${id}`);
+      return;
+    }
+    
     if (id === "home" && typeof window !== "undefined" && window.innerWidth < 768) {
       window.dispatchEvent(new CustomEvent("restore-hero"));
       setTimeout(() => {
@@ -75,7 +137,10 @@ export function Navigation({ ready }: NavigationProps) {
 
     setTimeout(() => {
       const el = document.getElementById(id);
-      if (!el) return;
+      if (!el) {
+        if (id === "home") window.scrollTo(0, 0);
+        return;
+      }
       const a = document.createElement("a");
       a.href = `#${id}`;
       a.style.display = "none";
@@ -255,3 +320,4 @@ export function Navigation({ ready }: NavigationProps) {
     </>
   );
 }
+

@@ -162,3 +162,18 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Showcase Endless Marquee with seamless pause/resume */
+@keyframes showcase-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-showcase-marquee {
+  animation: showcase-marquee 35s linear infinite;
+  will-change: transform;
+}

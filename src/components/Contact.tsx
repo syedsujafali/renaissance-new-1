@@ -1,7 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, type FormEvent } from "react";
-import { BRAND } from "../data/content";
-import { MagneticButton } from "./MagneticButton";
 import { Reveal, RevealText } from "./Reveal";
 
 export function Contact() {
@@ -24,11 +22,11 @@ export function Contact() {
       aria-labelledby="contact-heading"
     >
       {/* Static Glow Effects (No continuous animations to prevent scroll lag) */}
-      <div 
+      <div
         className="absolute top-1/4 left-1/4 w-[800px] h-[800px] pointer-events-none rounded-full opacity-60"
         style={{ background: 'radial-gradient(circle, rgba(96, 165, 250, 0.15) 0%, rgba(96, 165, 250, 0) 70%)' }}
       />
-      <div 
+      <div
         className="absolute bottom-0 right-1/4 w-[1000px] h-[1000px] pointer-events-none rounded-full opacity-60"
         style={{ background: 'radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0) 70%)' }}
       />
@@ -57,40 +55,29 @@ export function Contact() {
               <p className="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-white/40">
                 Inquire
               </p>
-              <a
-                href={`mailto:${BRAND.email}`}
-                className="mt-2 block font-display text-2xl text-white transition-opacity hover:opacity-70 md:text-3xl"
-                data-cursor="hover"
-              >
-                {BRAND.email}
-              </a>
-            </Reveal>
-            <Reveal delay={0.32}>
-              <p className="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-white/40">
-                Call
-              </p>
-              <a
-                href={`tel:+12125618955`}
-                className="mt-2 block font-display text-2xl text-white transition-opacity hover:opacity-70 md:text-3xl"
-                data-cursor="hover"
-              >
-                {BRAND.phone}
-              </a>
-            </Reveal>
-            <Reveal delay={0.38}>
-              <p className="font-sans text-[0.65rem] uppercase tracking-[0.3em] text-white/40">
-                Studio
-              </p>
-              <p className="mt-2 max-w-xs font-sans text-base font-light leading-relaxed text-white/70">
-                {BRAND.address}
-              </p>
+              <div className="space-y-4 mt-2">
+                <a
+                  href="mailto:info@renaissanceevents.com"
+                  className="block font-display text-xl sm:text-2xl md:text-[1.35rem] lg:text-3xl text-white transition-opacity hover:opacity-70"
+                  data-cursor="hover"
+                >
+                  info@renaissanceevents.com
+                </a>
+                <a
+                  href="mailto:info@specialeventschannel.com"
+                  className="block font-display text-xl sm:text-2xl md:text-[1.35rem] lg:text-3xl text-white transition-opacity hover:opacity-70"
+                  data-cursor="hover"
+                >
+                  info@specialeventschannel.com
+                </a>
+              </div>
             </Reveal>
           </div>
         </div>
 
         <div className="lg:col-span-6 lg:col-start-7">
           <Reveal delay={0.15}>
-            <div className="relative border border-white/5 bg-white/[0.04] p-8 md:p-12 shadow-[0_20px_40px_rgba(0,0,0,0.2)] rounded-3xl">
+            <div className="relative z-10 w-full bg-white/[0.02] border border-white/5 rounded-3xl p-8 sm:p-10 md:p-14 shadow-2xl backdrop-blur-sm">
               <AnimatePresence mode="wait">
                 {!submitted ? (
                   <motion.form
@@ -99,12 +86,13 @@ export function Contact() {
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0, y: -12 }}
                     transition={{ duration: 0.4 }}
-                    className="space-y-8"
+                    className="space-y-10"
                     noValidate
                   >
-                    <div className="grid gap-8 md:grid-cols-2">
-                      <label className="block group">
-                        <span className="font-sans text-[0.65rem] uppercase tracking-[0.28em] text-white/50 group-focus-within:text-white transition-colors">
+                    
+                    <div className="grid gap-10 md:grid-cols-2">
+                      <label className="flex flex-col gap-4 group/input">
+                        <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-white/50 group-focus-within/input:text-white transition-colors font-semibold">
                           Name
                         </span>
                         <input
@@ -113,11 +101,12 @@ export function Contact() {
                           type="text"
                           autoComplete="name"
                           placeholder="Your full name"
-                          className="w-full bg-transparent border-b border-white/20 px-0 py-4 text-white placeholder-white/30 focus:border-white focus:outline-none focus:bg-white/5 transition-all duration-300 mt-2"
+                          className="w-full bg-transparent border-b border-white/20 px-0 py-2 font-sans text-base md:text-lg text-white placeholder-white/30 focus:border-white focus:outline-none transition-colors"
                         />
                       </label>
-                      <label className="block group">
-                        <span className="font-sans text-[0.65rem] uppercase tracking-[0.28em] text-white/50 group-focus-within:text-white transition-colors">
+
+                      <label className="flex flex-col gap-4 group/input">
+                        <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-white/50 group-focus-within/input:text-white transition-colors font-semibold">
                           Email
                         </span>
                         <input
@@ -126,13 +115,13 @@ export function Contact() {
                           type="email"
                           autoComplete="email"
                           placeholder="you@company.com"
-                          className="w-full bg-transparent border-b border-white/20 px-0 py-4 text-white placeholder-white/30 focus:border-white focus:outline-none focus:bg-white/5 transition-all duration-300 mt-2"
+                          className="w-full bg-transparent border-b border-white/20 px-0 py-2 font-sans text-base md:text-lg text-white placeholder-white/30 focus:border-white focus:outline-none transition-colors"
                         />
                       </label>
                     </div>
 
-                    <label className="block group">
-                      <span className="font-sans text-[0.65rem] uppercase tracking-[0.28em] text-white/50 group-focus-within:text-white transition-colors">
+                    <label className="flex flex-col gap-4 group/input">
+                      <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-white/50 group-focus-within/input:text-white transition-colors font-semibold">
                         Company / Organization
                       </span>
                       <input
@@ -140,37 +129,41 @@ export function Contact() {
                         type="text"
                         autoComplete="organization"
                         placeholder="Optional"
-                        className="w-full bg-transparent border-b border-white/20 px-0 py-4 text-white placeholder-white/30 focus:border-white focus:outline-none focus:bg-white/5 transition-all duration-300 mt-2"
+                        className="w-full bg-transparent border-b border-white/20 px-0 py-2 font-sans text-base md:text-lg text-white placeholder-white/30 focus:border-white focus:outline-none transition-colors"
                       />
                     </label>
 
-                    <label className="block group">
-                      <span className="font-sans text-[0.65rem] uppercase tracking-[0.28em] text-white/50 group-focus-within:text-white transition-colors">
+                    <label className="flex flex-col gap-4 group/input">
+                      <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] text-white/50 group-focus-within/input:text-white transition-colors font-semibold">
                         How can we help?
                       </span>
                       <textarea
                         required
                         name="message"
                         placeholder="Tell us about your event, timeline, and aspirations..."
-                        className="w-full bg-transparent border-b border-white/20 px-0 py-4 text-white placeholder-white/30 focus:border-white focus:outline-none focus:bg-white/5 transition-all duration-300 mt-2 min-h-[120px] resize-y"
+                        className="w-full bg-transparent border-b border-white/20 px-0 py-2 font-sans text-base md:text-lg text-white placeholder-white/30 focus:border-white focus:outline-none transition-colors min-h-[120px] resize-none"
                       />
                     </label>
 
-                    <div className="flex flex-wrap items-center justify-between gap-6 pt-2">
-                      <p className="max-w-xs font-sans text-xs font-light leading-relaxed text-white/40">
-                        By submitting, you agree to be contacted regarding your inquiry.
-                        We respect your privacy.
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 pt-6">
+                      <p className="max-w-[280px] font-sans text-[0.65rem] font-light leading-relaxed text-white/50">
+                        By submitting, you agree to be contacted regarding your inquiry. We respect your privacy.
                       </p>
-                      <MagneticButton 
+                      
+                      <button 
                         type="submit" 
                         disabled={sending} 
-                        size="lg" 
-                        variant="outline"
-                        className="border-white/30 text-white hover:bg-white hover:text-renaissance hover:border-white"
+                        className="flex items-center justify-center gap-4 px-8 py-4 rounded-full border border-white/20 text-white hover:bg-white hover:text-renaissance transition-all duration-300 shrink-0 group"
                       >
-                        {sending ? "Sending" : "Send Message"}
-                      </MagneticButton>
+                        <span className="font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase">
+                          {sending ? "Sending..." : "Send Message"}
+                        </span>
+                        <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </button>
                     </div>
+
                   </motion.form>
                 ) : (
                   <motion.div

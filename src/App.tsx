@@ -1,33 +1,35 @@
 import { useState } from "react";
-import { About } from "./components/About";
-import { Contact } from "./components/Contact";
-import { Footer } from "./components/Footer";
-import { Hero } from "./components/Hero";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
-import { Portfolio } from "./components/Portfolio";
 import { useLenis } from "./hooks/useLenis";
+import { Home } from "./pages/Home";
+import { PortfolioPage } from "./pages/PortfolioPage";
+import { AboutPage } from "./pages/AboutPage";
+import { ContactPage } from "./pages/ContactPage";
+import { CookieBanner } from "./components/CookieBanner";
 
 export default function App() {
-  const [ready, setReady] = useState(true);
+  const [ready] = useState(true);
 
   useLenis(ready);
 
   return (
-    <>
+    <BrowserRouter>
       <a
-        href="#home"
+        href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[10001] focus:bg-white focus:px-4 focus:py-2 focus:text-renaissance"
       >
         Skip to content
       </a>
       <Navigation ready={ready} />
-      <main id="main">
-        <Hero ready={ready} />
-        <About />
-        <Portfolio />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+      <Routes>
+        <Route path="/" element={<Home ready={ready} />} />
+        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+      <CookieBanner />
+    </BrowserRouter>
   );
 }
+
