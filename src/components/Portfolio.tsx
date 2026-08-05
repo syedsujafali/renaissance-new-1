@@ -190,7 +190,7 @@ export function Portfolio() {
               </button>
 
               {/* Left Column: Image Gallery (Takes up full height on desktop) */}
-              <div className="w-full md:w-[60%] h-[50vh] md:h-full relative bg-gray-100 flex flex-col">
+              <div className="w-full md:w-[60%] h-[35vh] sm:h-[45vh] md:h-full relative bg-gray-100 flex flex-col flex-shrink-0">
                 <div className="flex-1 relative overflow-hidden">
                   <img
                     src={activeProject.images[activeImageIndex] || activeProject.image}

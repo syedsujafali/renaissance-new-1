@@ -97,6 +97,7 @@ export function Navigation({ ready }: NavigationProps) {
 
   const scrollTo = (id: string) => {
     setOpen(false);
+    window.dispatchEvent(new CustomEvent("unlock-scroll"));
     
     if (id === "portfolio") {
       if (location.pathname !== "/portfolio") {
@@ -161,7 +162,7 @@ export function Navigation({ ready }: NavigationProps) {
           effectivelyScrolled ? "bg-renaissance py-4 shadow-xl" : "bg-transparent py-6 md:py-10"
         )}
       >
-        <div className="mx-auto grid max-w-[1600px] grid-cols-2 lg:grid-cols-3 items-center px-6 md:px-10 lg:px-14">
+        <div className="mx-auto flex w-full max-w-[1600px] items-center justify-between px-4 sm:px-6 md:px-10 lg:px-14">
           <div className="flex items-center justify-start">
             <a
               href="#home"
@@ -217,27 +218,20 @@ export function Navigation({ ready }: NavigationProps) {
             </AnimatePresence>
           </div>
 
-          {/* Big Menu Button */}
-          <div
-            className={cn(
-              "flex items-center justify-end transition-all duration-500",
-              effectivelyScrolled 
-                ? "opacity-100 translate-y-0 lg:opacity-0 lg:pointer-events-none lg:-translate-y-4" 
-                : "opacity-0 pointer-events-none -translate-y-4 lg:opacity-100 lg:pointer-events-auto lg:translate-y-0"
-            )}
-          >
+          {/* Menu Button */}
+          <div className="flex items-center justify-end">
             <button
               type="button"
-              className="group flex items-center gap-4 rounded-full border border-white/20 bg-white/5 px-6 py-3 backdrop-blur-md transition-all duration-500 hover:scale-105 hover:bg-white hover:border-white"
+              className="group flex items-center gap-2 sm:gap-4 rounded-full border border-white/20 bg-white/5 px-4 py-2 sm:px-6 sm:py-3 backdrop-blur-md transition-all duration-500 hover:scale-105 hover:bg-white hover:border-white"
               onClick={() => setOpen(true)}
               data-cursor="hover"
             >
-              <span className="font-sans text-[0.7rem] font-bold uppercase tracking-[0.25em] text-white transition-colors duration-500 group-hover:text-renaissance">
+              <span className="font-sans text-[0.65rem] sm:text-[0.7rem] font-bold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-white transition-colors duration-500 group-hover:text-renaissance">
                 Menu
               </span>
-              <div className="flex w-6 flex-col gap-1.5">
+              <div className="flex w-5 sm:w-6 flex-col gap-1 sm:gap-1.5">
                 <span className="block h-[2px] w-full bg-white transition-colors duration-500 group-hover:bg-renaissance" />
-                <span className="block h-[2px] w-4 self-end bg-white transition-all duration-500 group-hover:w-full group-hover:bg-renaissance" />
+                <span className="block h-[2px] w-3 sm:w-4 self-end bg-white transition-all duration-500 group-hover:w-full group-hover:bg-renaissance" />
               </div>
             </button>
           </div>

@@ -60,7 +60,7 @@ export function Footer() {
           style={{ y }}
           className="flex flex-col items-center justify-center flex-grow py-6 md:py-8 select-none z-0"
         >
-          <div className="flex flex-col items-center w-max">
+          <div className="flex flex-col items-center w-full max-w-full">
             <div className="w-full h-[1px] bg-white/20 mb-4 md:mb-5" />
             
             <span className="font-display text-[9vw] md:text-[6.5vw] tracking-[0.12em] uppercase leading-none pl-[0.12em] text-white">

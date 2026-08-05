@@ -41,7 +41,7 @@ export function About({ showImages = false }: { showImages?: boolean }) {
         <div className="relative text-left w-full max-w-[1400px] mx-auto">
           
           {/* Floated Image(s) on the Right */}
-          <div className={`float-right ml-5 lg:ml-8 ${showImages ? "mb-24 md:mb-36 lg:mb-48 mr-6 md:mr-10" : "mb-0"} w-[250px] md:w-[350px] lg:w-[450px] relative z-20 mt-2`}>
+          <div className={`float-right ml-4 sm:ml-6 lg:ml-8 ${showImages ? "mb-16 sm:mb-24 md:mb-36 lg:mb-48 mr-2 sm:mr-6 md:mr-10" : "mb-4"} w-[140px] xs:w-[180px] sm:w-[250px] md:w-[350px] lg:w-[450px] relative z-20 mt-2`}>
             <motion.div 
                initial={{ opacity: 0, scale: 0.95 }}
                whileInView={{ opacity: 1, scale: 1 }}
@@ -73,19 +73,21 @@ export function About({ showImages = false }: { showImages?: boolean }) {
             )}
           </div>
 
-          {/* Background Text aligned directly behind the text column */}
-          <div className="absolute inset-0 pointer-events-none flex items-center justify-center -z-10">
-            <motion.div 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display leading-none whitespace-nowrap select-none origin-center text-[22vh] md:text-[28vh] text-renaissance/[0.04] -rotate-90 lg:rotate-0 lg:text-[40vh] lg:-translate-y-12"
-              aria-hidden="true"
-            >
-              ABOUT US
-            </motion.div>
-          </div>
+          {/* Background Text aligned directly behind the text column (Hidden on dedicated About Page) */}
+          {!showImages && (
+            <div className="absolute inset-0 pointer-events-none flex items-center justify-center -z-10">
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
+                className="font-display leading-none whitespace-nowrap select-none origin-center text-[22vh] md:text-[28vh] text-renaissance/[0.04] -rotate-90 lg:rotate-0 lg:text-[40vh] lg:-translate-y-12"
+                aria-hidden="true"
+              >
+                ABOUT US
+              </motion.div>
+            </div>
+          )}
           
           {/* Text Content Wrapping the Image */}
           <div className="mb-8 md:mb-12 relative z-10">

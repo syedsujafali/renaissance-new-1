@@ -58,14 +58,14 @@ export function Contact() {
               <div className="space-y-4 mt-2">
                 <a
                   href="mailto:info@renaissanceevents.com"
-                  className="block font-display text-xl sm:text-2xl md:text-[1.35rem] lg:text-3xl text-white transition-opacity hover:opacity-75"
+                  className="block font-display text-lg sm:text-xl md:text-[1.35rem] lg:text-3xl text-white transition-opacity hover:opacity-75 break-words"
                   data-cursor="hover"
                 >
                   info@renaissanceevents.com
                 </a>
                 <a
                   href="mailto:info@specialeventschannel.com"
-                  className="block font-display text-xl sm:text-2xl md:text-[1.35rem] lg:text-3xl text-white transition-opacity hover:opacity-75"
+                  className="block font-display text-lg sm:text-xl md:text-[1.35rem] lg:text-3xl text-white transition-opacity hover:opacity-75 break-words"
                   data-cursor="hover"
                 >
                   info@specialeventschannel.com

@@ -45,12 +45,19 @@ export function useLenis(enabled: boolean) {
       lenis.stop();
     }
 
+    const onUnlockScroll = () => {
+      document.body.classList.remove("scroll-locked");
+      lenis.start();
+    };
+    window.addEventListener("unlock-scroll", onUnlockScroll);
+
     const onScrollTop = () => {
       lenis.scrollTo(0, { immediate: true });
     };
     window.addEventListener("scroll-to-top", onScrollTop);
 
     return () => {
+      window.removeEventListener("unlock-scroll", onUnlockScroll);
       window.removeEventListener("scroll-to-top", onScrollTop);
       observer.disconnect();
       cancelAnimationFrame(frame);
