@@ -80,6 +80,21 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    id: "clemente-gala",
+    title: "Roberto Clemente Foundation Gala",
+    category: "Fundraising & Galas",
+    year: "2023",
+    location: "Pittsburgh, PA",
+    attendees: "200+ VIPs & Athletes",
+    description:
+      "Commemorating the 50th anniversary of Roberto Clemente's Hall of Fame induction, this milestone fundraising gala at the Heinz History Center featured MLB alumni and honored community leaders.",
+    image: "/a3.JPEG",
+    imageSecondary: "/a4.png",
+    images: ["/a3.JPEG", "/a4.png", "/a1.jpeg", "/a2.JPEG"],
+    tags: ["Charity Gala", "Event Production", "Sports & Philanthropy"],
+    layout: "stacked",
+  },
+  {
     id: "verus-summit",
     title: "Verus Litigation Summit",
     category: "Corporate Conferences",
@@ -110,21 +125,6 @@ export const PROJECTS: Project[] = [
     layout: "split",
   },
   {
-    id: "clemente-gala",
-    title: "Roberto Clemente Foundation Gala",
-    category: "Fundraising & Galas",
-    year: "2023",
-    location: "Pittsburgh, PA",
-    attendees: "200+ VIPs & Athletes",
-    description:
-      "Commemorating the 50th anniversary of Roberto Clemente's Hall of Fame induction, this milestone fundraising gala at the Heinz History Center featured MLB alumni and honored community leaders.",
-    image: "/a3.JPEG",
-    imageSecondary: "/a4.png",
-    images: ["/a3.JPEG", "/a4.png", "/a1.jpeg", "/a2.JPEG"],
-    tags: ["Charity Gala", "Event Production", "Sports & Philanthropy"],
-    layout: "stacked",
-  },
-  {
     id: "nba-midyear-conference",
     title: "NBA 45th Annual Midyear Conference",
     category: "Conferences & Galas",
@@ -139,8 +139,6 @@ export const PROJECTS: Project[] = [
     tags: ["Midyear Conference", "Awards Luncheon", "VIP Logistics"],
     layout: "wide",
   },
-
-
 ];
 
 export const CLIENTS = [

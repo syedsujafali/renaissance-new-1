@@ -13,7 +13,7 @@ export function Portfolio() {
 
   return (
     <section id="portfolio" className="relative bg-[#FAFAFA] min-h-screen pb-24 md:pb-36" aria-labelledby="portfolio-heading">
-      
+
       {/* Background Subtle Mesh Grid */}
       <div className="absolute inset-0 pointer-events-none opacity-40 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:36px_36px]" />
 
@@ -26,15 +26,33 @@ export function Portfolio() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-center text-center max-w-4xl mx-auto"
         >
-          <div className="flex items-center gap-3 mb-6">
-            <span className="h-[2px] w-8 bg-renaissance" />
-            <span className="font-sans text-[0.75rem] uppercase tracking-[0.4em] text-renaissance/60 font-semibold">
-              Curated Exhibition
+          <h1 id="portfolio-heading" className="relative font-display text-[clamp(3.5rem,8vw,7rem)] font-medium leading-[0.95] tracking-tight text-renaissance mb-12 flex items-center justify-center gap-6">
+            <motion.span
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="hidden md:block w-12 lg:w-24 h-[2px] bg-gradient-to-l from-renaissance/50 to-transparent origin-right"
+            />
+            <span className="relative">
+              Port<span className="font-light italic text-renaissance/70">folio</span>
+              <motion.span
+                initial={{ opacity: 0, scale: 0, rotate: -45 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.8, type: "spring" }}
+                className="absolute -top-4 md:-top-6 -right-8 md:-right-12 text-3xl md:text-4xl text-renaissance/40"
+              >
+                ✦
+              </motion.span>
             </span>
-            <span className="h-[2px] w-8 bg-renaissance" />
-          </div>
-          <h1 id="portfolio-heading" className="font-display text-[clamp(3.5rem,8vw,7rem)] font-medium leading-[0.95] tracking-tight text-renaissance">
-            Selected Works
+            <motion.span
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="hidden md:block w-12 lg:w-24 h-[2px] bg-gradient-to-r from-renaissance/50 to-transparent origin-left"
+            />
           </h1>
         </motion.div>
       </div>
@@ -45,12 +63,12 @@ export function Portfolio() {
           const isEven = idx % 2 === 0;
 
           return (
-            <div 
-              key={project.id} 
+            <div
+              key={project.id}
               className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-10 lg:gap-20`}
             >
               {/* Image Block */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -74,7 +92,7 @@ export function Portfolio() {
               </motion.div>
 
               {/* Text Block */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -86,15 +104,15 @@ export function Portfolio() {
                   <span className="h-[1px] flex-1 bg-renaissance/10" />
                   <span>{project.year}</span>
                 </div>
-                
+
                 <h2 className="font-display text-4xl lg:text-5xl xl:text-6xl text-renaissance font-medium leading-[1.1] mb-6">
                   {project.title}
                 </h2>
-                
+
                 <p className="font-sans text-base lg:text-lg text-renaissance/80 leading-relaxed font-normal mb-8 max-w-2xl">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-col gap-3 mb-10 border-l border-renaissance/10 pl-5">
                   <div>
                     <span className="block text-[0.65rem] uppercase tracking-widest font-sans text-renaissance/40 font-semibold">Location</span>
@@ -106,7 +124,7 @@ export function Portfolio() {
                   </div>
                 </div>
 
-                <button 
+                <button
                   onClick={() => openModal(project)}
                   className="group/btn flex items-center gap-4 w-fit"
                 >
@@ -180,7 +198,7 @@ export function Portfolio() {
                     className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
                   />
                 </div>
-                
+
                 {/* Thumbnails overlaid at bottom of image area */}
                 {activeProject.images && activeProject.images.length > 1 && (
                   <div className="absolute bottom-6 left-0 right-0 flex justify-center">
@@ -189,9 +207,8 @@ export function Portfolio() {
                         <button
                           key={idx}
                           onClick={() => setActiveImageIndex(idx)}
-                          className={`relative h-14 w-20 rounded-xl overflow-hidden transition-all flex-shrink-0 ${
-                            activeImageIndex === idx ? "ring-2 ring-renaissance scale-105 shadow-md" : "opacity-60 hover:opacity-100 hover:scale-105"
-                          }`}
+                          className={`relative h-14 w-20 rounded-xl overflow-hidden transition-all flex-shrink-0 ${activeImageIndex === idx ? "ring-2 ring-renaissance scale-105 shadow-md" : "opacity-60 hover:opacity-100 hover:scale-105"
+                            }`}
                         >
                           <img src={img} alt={`Thumb ${idx}`} className="w-full h-full object-cover" />
                         </button>
@@ -204,7 +221,7 @@ export function Portfolio() {
               {/* Right Column: Info & Content */}
               <div className="w-full md:w-[40%] flex flex-col h-full overflow-y-auto bg-white">
                 <div className="p-8 md:p-12 lg:p-16 flex flex-col flex-1 justify-center">
-                  
+
                   <div className="flex items-center gap-4 mb-6">
                     <span className="h-[1px] w-8 bg-renaissance/20" />
                     <span className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.3em] text-renaissance/50">
@@ -215,7 +232,7 @@ export function Portfolio() {
                   <h2 className="font-display text-4xl lg:text-5xl font-medium text-renaissance leading-tight mb-8">
                     {activeProject.title}
                   </h2>
-                  
+
                   <p className="font-sans text-base lg:text-lg text-renaissance/80 leading-relaxed font-light mb-12">
                     {activeProject.description}
                   </p>

@@ -9,7 +9,7 @@ export function AboutPage() {
 
   return (
     <>
-      <main id="main" className="min-h-screen bg-white">
+      <main id="main" className="min-h-screen bg-white pt-12 md:pt-20">
         <About showImages={true} />
       </main>
       <Footer />

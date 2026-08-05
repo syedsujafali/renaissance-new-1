@@ -151,7 +151,7 @@ export function Hero({ ready }: HeroProps) {
               className="absolute inset-0 flex items-center justify-center pointer-events-none z-10"
             >
               <h2 className="text-white font-display text-5xl md:text-7xl lg:text-8xl tracking-tight font-medium text-center px-4 drop-shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
-                where creativity begins
+                Where Creativity Begins
               </h2>
             </motion.div>
           )}

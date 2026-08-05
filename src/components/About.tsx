@@ -32,7 +32,7 @@ export function About({ showImages = false }: { showImages?: boolean }) {
   return (
     <section
       id="about"
-      className="relative bg-white pt-24 pb-12 md:pt-40 md:pb-16 lg:pt-52 lg:pb-20 overflow-hidden"
+      className="relative bg-white pt-16 pb-12 md:pt-24 md:pb-16 lg:pt-32 lg:pb-20 overflow-hidden"
       aria-labelledby="about-heading"
     >
       <div className="relative z-10 mx-auto max-w-[1600px] px-6 md:px-10 lg:px-14 [perspective:2000px]">
@@ -88,6 +88,25 @@ export function About({ showImages = false }: { showImages?: boolean }) {
           </div>
           
           {/* Text Content Wrapping the Image */}
+          <div className="mb-8 md:mb-12 relative z-10">
+            <motion.h2 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="font-display text-2xl md:text-4xl text-renaissance font-black tracking-[0.2em] uppercase relative inline-block"
+            >
+              About Us
+              <motion.span 
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
+                className="absolute -bottom-3 md:-bottom-4 left-0 w-[120%] h-[3px] bg-gradient-to-r from-renaissance via-renaissance/70 to-transparent origin-left"
+              ></motion.span>
+            </motion.h2>
+          </div>
+          
           <div className={`font-display ${showImages ? "text-[clamp(1.4rem,2.5vw,3rem)]" : "text-[clamp(1.8rem,4vw,4.5rem)]"} font-medium leading-[1.2] tracking-tight text-renaissance pt-2 relative z-10`}>
             <ScrollParagraph text={ABOUT_COPY.body} align="left" />
           </div>
