@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
 import { useLenis } from "./hooks/useLenis";

@@ -58,24 +58,24 @@ export function Footer() {
         {/* Center: Unified Hero Logo Block with Lines */}
         <motion.div 
           style={{ y }}
-          className="flex flex-col items-center justify-center flex-grow py-6 md:py-8 select-none z-0"
+          className="flex flex-col items-center justify-center flex-grow py-8 md:py-12 select-none z-0"
         >
-          <div className="flex flex-col items-center w-full max-w-full">
-            <div className="w-full h-[1px] bg-white/20 mb-4 md:mb-5" />
+          <div className="inline-flex flex-col items-center w-fit max-w-full">
+            <div className="w-full h-[1.5px] bg-white/30 mb-3 md:mb-4" />
             
             <span className="font-display text-[9vw] md:text-[6.5vw] tracking-[0.12em] uppercase leading-none pl-[0.12em] text-white">
               RENAISSANCE
             </span>
             
-            <div className="w-full h-[1px] bg-white/10 mt-4 md:mt-5 mb-4 md:mb-5" />
+            <div className="w-full h-[1px] bg-white/20 mt-3 md:mt-4 mb-3 md:mb-4" />
             
-            <div className="flex flex-col items-center font-display text-[2.8vw] md:text-[1.2vw] tracking-[0.3em] uppercase leading-tight text-white/60">
+            <div className="flex flex-col items-center font-display text-[2.8vw] md:text-[1.2vw] tracking-[0.3em] uppercase leading-tight text-white/70">
               <span>MEETINGS</span>
-              <span className="my-1 md:my-2">&</span>
+              <span className="my-1 md:my-1.5">&</span>
               <span>SPECIAL EVENTS, INC.</span>
             </div>
             
-            <div className="w-full h-[1px] bg-white/20 mt-4 md:mt-5" />
+            <div className="w-full h-[1.5px] bg-white/30 mt-3 md:mt-4" />
           </div>
         </motion.div>
 

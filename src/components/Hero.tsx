@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import { NAV_LINKS } from "../data/content";
+import { useRef, useState } from "react";
 
 type HeroProps = {
   ready: boolean;
@@ -22,66 +21,7 @@ export function Hero({ ready }: HeroProps) {
   // Tagline state
   const [showTagline, setShowTagline] = useState(false);
 
-  useEffect(() => {
-    let unlocked = false;
 
-    const preventScroll = (e: Event) => {
-      if (!unlocked) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    };
-
-    const lockScroll = () => {
-      document.body.classList.add("scroll-locked");
-      document.documentElement.style.overflow = "hidden";
-      document.body.style.overflow = "hidden";
-      document.body.style.touchAction = "none";
-      window.addEventListener("wheel", preventScroll, { passive: false });
-      window.addEventListener("touchmove", preventScroll, { passive: false });
-    };
-
-    const unlockScroll = () => {
-      unlocked = true;
-      document.body.classList.remove("scroll-locked");
-      document.documentElement.style.overflow = "";
-      document.body.style.overflow = "";
-      document.body.style.touchAction = "";
-      window.removeEventListener("wheel", preventScroll);
-      window.removeEventListener("touchmove", preventScroll);
-    };
-
-    lockScroll();
-
-    const handleGlobalUnlock = () => {
-      unlockScroll();
-    };
-
-    window.addEventListener("unlock-scroll", handleGlobalUnlock);
-
-    return () => {
-      unlockScroll();
-      window.removeEventListener("unlock-scroll", handleGlobalUnlock);
-    };
-  }, []);
-
-  const handleMobileLinkClick = (id: string) => {
-    window.dispatchEvent(new CustomEvent("unlock-scroll"));
-
-    setTimeout(() => {
-      if (id === "home") {
-        const showcaseEl = document.getElementById("showcase");
-        if (showcaseEl) {
-          showcaseEl.scrollIntoView({ behavior: "smooth" });
-        }
-      } else {
-        const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    }, 50);
-  };
 
   const handleAcceptCookies = () => {
     localStorage.setItem("cookie_consent", "accepted");
