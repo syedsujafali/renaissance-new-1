@@ -41,7 +41,7 @@ export function Hero({ ready }: HeroProps) {
 
         {/* Desktop Video (Hidden on Phone) */}
         <motion.video
-          src="/hero final.mp4"
+          src="/herooo.mp4"
           autoPlay
           muted
           loop
