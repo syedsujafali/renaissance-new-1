@@ -87,7 +87,7 @@ export function Portfolio() {
                 className="w-full lg:w-[40%] relative group cursor-pointer"
                 onClick={() => openModal(project)}
               >
-                <div className="relative w-full aspect-[4/3] lg:aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
+                <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] max-h-[380px] rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -187,7 +187,7 @@ export function Portfolio() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 30 }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="relative z-10 w-full max-w-7xl max-h-[95vh] h-full overflow-hidden bg-[#FAFAFA] rounded-3xl shadow-2xl flex flex-col md:flex-row"
+              className="relative z-10 w-full max-w-7xl max-h-[85vh] h-full overflow-hidden bg-[#FAFAFA] rounded-3xl shadow-2xl flex flex-col md:flex-row"
             >
               {/* Close Button */}
               <button

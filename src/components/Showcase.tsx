@@ -64,7 +64,7 @@ export function Showcase() {
               className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer"
             >
               {/* Image Box */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
+              <div className="relative aspect-[16/9] max-h-[320px] w-full overflow-hidden bg-gray-100">
                 <img
                   src={item.image}
                   alt={item.title}
