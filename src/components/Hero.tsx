@@ -19,7 +19,7 @@ export function Hero({ ready }: HeroProps) {
     <section
       id="home"
       ref={ref}
-      className="relative flex h-[86vh] md:h-[84vh] min-h-[520px] max-h-[850px] items-end overflow-hidden bg-renaissance"
+      className="relative flex h-[85vh] min-h-[520px] max-h-[960px] items-end overflow-hidden bg-renaissance"
       aria-label="Hero"
     >
       <motion.div className="absolute inset-0" style={{ y: imageY, scale: imageScale }}>
@@ -40,16 +40,21 @@ export function Hero({ ready }: HeroProps) {
         </div>
 
         {/* Desktop Video (Hidden on Phone) */}
+        {/*
+          The video has black bars baked in. We scale it up ~18% and center it
+          so the bars are clipped by the overflow:hidden container.
+        */}
         <motion.video
-          src="/herooo.mp4"
+          src="/0811(2).mp4"
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          className="hidden md:block h-full w-full object-cover"
-          initial={{ clipPath: "circle(0% at 50% 50%)", scale: 1.1, opacity: 0 }}
-          animate={ready ? { clipPath: "circle(150% at 50% 50%)", scale: 1, opacity: 1 } : {}}
+          className="hidden md:block absolute inset-0 h-full w-full object-cover"
+          style={{ transform: "scale(1.18)", transformOrigin: "center center" }}
+          initial={{ clipPath: "circle(0% at 50% 50%)", opacity: 0 }}
+          animate={ready ? { clipPath: "circle(150% at 50% 50%)", opacity: 1 } : {}}
           transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
         />
 
