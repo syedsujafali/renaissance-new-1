@@ -45,7 +45,7 @@ export function Hero({ ready }: HeroProps) {
           so the bars are clipped by the overflow:hidden container.
         */}
         <motion.video
-          src="/0811(2).mp4"
+          src="/0811(3).mp4"
           autoPlay
           muted
           loop
